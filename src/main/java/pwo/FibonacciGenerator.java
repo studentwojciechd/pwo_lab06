@@ -2,6 +2,10 @@ package pwo;
 
 import java.math.BigDecimal;
 
+/**
+ *
+ * @author wojciech
+ */
 public class FibonacciGenerator {
 
     private int lastIndex = 0;
@@ -9,6 +13,9 @@ public class FibonacciGenerator {
     private BigDecimal f_1 = new BigDecimal(1),
             f_2 = new BigDecimal(0);
 
+    /**
+     *
+     */
     public void reset() {
         lastIndex = 0;
         current = new BigDecimal(0);
@@ -16,6 +23,10 @@ public class FibonacciGenerator {
         f_2 = new BigDecimal(0);
     }
 
+    /**
+     *
+     * @return
+     */
     public BigDecimal nextTerm() {
         if (lastIndex > 1) {
             current = f_1.add(f_2);
@@ -30,6 +41,11 @@ public class FibonacciGenerator {
         return current;
     }
 
+    /**
+     *
+     * @param i
+     * @return
+     */
     public BigDecimal getTerm(int i) {
         if (i < 0) {
             throw new IllegalArgumentException();
